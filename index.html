@@ -1,269 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RationalVLA: Project Demo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-      .title {
-     
-        text-align: center;
-        margin-bottom: 20px;
-        padding: 30px 0;
-        border-radius: 10px;
-        
-      }
-        
-/*         .title {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 30px 0;
-/*             background-color: #fff; */
-/*             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        } */ 
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-        .carousel-control-prev,
-        .carousel-control-next {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 5%;
-          align-items: center;
-          justify-content: center;
-          height: 100%; /* Ensure the buttons take the full height of the container */
-        }
-    
-        .video-wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: stretch; /* Changed to stretch to ensure same height */
-          position: relative;
-          width: 70%;
-          margin: auto;
-          gap: 1%;
-          border: none;
-          padding: 0;
-          background: none;
-        }
-    
-        .carousel-caption {
-          position: relative;
-          left: 0;
-          color: black;
-          margin-top: 10px; /* Adjust margin as needed */
-          text-align: center;
-      }
-    
-        .carousel-inner {
-            overflow: hidden; /* Ensure no overflow is visible during transitions */
-            margin: 0; /* Remove any margin */
-            padding: 0; /* Remove any padding */
-          }
-        .text-box {
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            font-size: 12px;
-          
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 40px;
-           	 margin-bottom: 40px;
-          }
-        
-        .button-container a {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            border-radius: 30px;
-            border: 1px solid #ccc;
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-          }
-        
-        .button-container a i {
-            margin-right: 8px;
-          	  
-          }
-        
-        .navbar {
-            background: linear-gradient(90deg, #4568dc, #b06ab3);
-            padding: 0.5rem 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          }
-        
-        .navbar-brand img {
-            height: 35px;
-            margin-right: 10px;
-          }
-        
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white !important;
-          }
-        
-        .nav-link {
-            color: white !important;
-            margin: 0 10px;
-            position: relative;
-            transition: all 0.3s ease;
-          }
-        
-        .nav-link:hover {
-            transform: translateY(-2px);
-          }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: white;
-            transition: width 0.3s ease;
-          }
-        
-        .nav-link:hover::after {
-            width: 100%;
-          }
-        
-        .dropdown-menu {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-          }
-        
-        .dropdown-item {
-            transition: all 0.3s ease;
-            padding: 0.5rem 1.5rem;
-          }
-        
-        .dropdown-item:hover {
-            background: linear-gradient(90deg, #4568dc33, #b06ab333);
-            transform: translateX(5px);
-          }
-        
-        body {
-            padding-top: 60px; /* Reduced from 80px to match the new navbar height */
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 70px; /* Adjust based on your navbar height */
-        }
-                
-        .authors {
-                text-align: center;
-                margin: 30px 0;
-                line-height: 1.6;
-        }
-            
-        .video-container {
-                background-color: #fff;
-                padding: 50px;
-                border-radius: 10px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-                margin: 0 auto;
-                width: fit-content;
-        }
-            
-        video {
-                width: 800px;
-                height: auto;
-                border-radius: 10px;
-        }
-       .institutes {
-            text-align: center;
-            margin: 30px 0;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
-    <div class="title" >
-        <h1>RationalVLA: A Dual-system </h1>
-         <h1>Vision-Language-Action Model for Defective Instructions</h1>
-    </div>
 
-<!--     <div class="authors">
-        <div>Wenxuan Song, Jiayi Chen, Han Zhao, Xu He, Wenxue Li, Pengxiang Ding, Shiyan </div>
-        <div>Su, Feilong Tang, Xuelian Cheng, Zongyuan Ge, Donglin Wang, Haoang Li </div>
-<!--         <div>Bob Johnson<sup>1,2</sup></div>
-        <div>Charlie Lee<sup>2</sup></div> -->
-<!--         <div style="margin-top: 15px; font-size: 0.9em;">
-            <sup>1</sup>The HongKong University of Science and Technology(Guangzhou)<br>
-            <sup>2</sup>Shanghai Jiao Tong University
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">RationalVLA: A Dual-system Vision-Language-Action Model for Defective Instructions</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <div class="is-size-5 publication-authors">
+                    <a href="https://fake.link/wenxuan-song">Wenxuan Song</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/jiayi-chen">Jiayi Chen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/han-zhao">Han Zhao</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/xu-he">Xu He</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/wenxue-li">Wenxue Li</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/pengxiang-ding">Pengxiang Ding</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/shiyan-su">Shiyan Su</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/feilong-tang">Feilong Tang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/xuelian-cheng">Xuelian Cheng</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/zongyuan-ge">Zongyuan Ge</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/donglin-wang">Donglin Wang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://fake.link/haoang-li">Haoang Li</a>
+                    <!-- <br /><sup>*</sup>Indicates co-first author<br /> -->
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">The HongKong University of Science and Technology(Guangzhou)<br>/span>
+                    <span class="author-block">Shanghai Jiao Tong University<br>/span>   
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
         </div>
-    </div> --> 
-    <div class="is-size-5 publication-authors">
-        <span class="author-block">
-          <p class="authors">
-            <a>Wenxuan Song</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Jiayi Chen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Han Zhao</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Xu He</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Wenxue Li</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Pengxiang Ding</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Shiyan Su</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Feilong Tang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Xuelian Cheng</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Zongyuan Ge</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Donglin Wang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a>Haoang Li</a>
-            <!-- <br /><sup>*</sup>Indicates co-first author<br /> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
           </p>
-         </span>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+<!-- End paper abstract -->
 
- <div class="institutes">
-              <span class="author-block"><sup>1</sup><b>The HongKong University of Science and Technology(Guangzhou)</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span class="author-block"><sup>2</sup><b>Shanghai Jiao Tong University</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    </div>
-    
-    <div class="button-container">
-              <a href="" class="btn btn-outline-secondary">
-                <i class="fa-solid fa-file-pdf"></i> Paper
-              </a>
-              <a href="" class="btn btn-outline-secondary">
-                <i class="fa-solid fa-download"></i> Dataset
-              </a>
-              <a href="" class="btn btn-outline-secondary">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-              <a href="" class="btn btn-outline-secondary">
-                <i class="fa-solid fa-laptop"></i> Demo
-              </a>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
      </div>
-
-    <div class="video-container">
-        <video controls>
-            <source src="demo_video.mp4" type="video/mp4">
-            <source src="demo_video.webm" type="video/webm">
-            Your browser does not support the video tag.
-        </video>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
     </div>
-</body>
-</html>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
