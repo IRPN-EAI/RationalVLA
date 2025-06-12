@@ -14,35 +14,193 @@
             color: #333;
         }
         
-        .title {
+/*         .title {
             text-align: center;
             margin-bottom: 20px;
             padding: 30px 0;
-            background-color: #fff;
-            border-radius: 10px;
+/*             background-color: #fff; */
+/*             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        } */ 
+
+        .carousel-control-prev,
+        .carousel-control-next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 5%;
+          align-items: center;
+          justify-content: center;
+          height: 100%; /* Ensure the buttons take the full height of the container */
         }
-        
-        .authors {
-            text-align: center;
-            margin: 30px 0;
-            line-height: 1.6;
+    
+        .video-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: stretch; /* Changed to stretch to ensure same height */
+          position: relative;
+          width: 70%;
+          margin: auto;
+          gap: 1%;
+          border: none;
+          padding: 0;
+          background: none;
         }
-        
+    
         .video-container {
-            background-color: #fff;
-            padding: 20px;
+          position: relative;
+          width: 50%;
+          aspect-ratio: 16/9; /* Force a consistent aspect ratio */
+          border-radius: 10px;
+          display: flex; /* Added to help with centering */
+          align-items: center; /* Center content vertically */
+        }
+    
+        .video-container video {
+          width: 100%;
+          height: 100%; /* Force full height */
+          object-fit: cover; /* Maintain aspect ratio while filling container */
+          border-radius: 10px;
+          border: 1px solid #ccc;
+        }
+    
+        .carousel-caption {
+          position: relative;
+          left: 0;
+          color: black;
+          margin-top: 10px; /* Adjust margin as needed */
+          text-align: center;
+      }
+    
+        .carousel-inner {
+            overflow: hidden; /* Ensure no overflow is visible during transitions */
+            margin: 0; /* Remove any margin */
+            padding: 0; /* Remove any padding */
+          }
+        .text-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            padding: 5px 10px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin: 0 auto;
-            width: fit-content;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            font-size: 12px;
+          
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+          }
+        
+        .button-container a {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+          }
+        
+        .button-container a i {
+            margin-right: 8px;
+          }
+        
+        .navbar {
+            background: linear-gradient(90deg, #4568dc, #b06ab3);
+            padding: 0.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          }
+        
+        .navbar-brand img {
+            height: 35px;
+            margin-right: 10px;
+          }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white !important;
+          }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+          }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+          }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+          }
+        
+        .nav-link:hover::after {
+            width: 100%;
+          }
+        
+        .dropdown-menu {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          }
+        
+        .dropdown-item {
+            transition: all 0.3s ease;
+            padding: 0.5rem 1.5rem;
+          }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(90deg, #4568dc33, #b06ab333);
+            transform: translateX(5px);
+          }
+        
+        body {
+            padding-top: 60px; /* Reduced from 80px to match the new navbar height */
         }
         
-        video {
-            width: 800px;
-            height: auto;
-            border-radius: 5px;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px; /* Adjust based on your navbar height */
         }
+                
+        .authors {
+                text-align: center;
+                margin: 30px 0;
+                line-height: 1.6;
+        }
+            
+        .video-container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                margin: 0 auto;
+                width: fit-content;
+        }
+            
+        video {
+                width: 800px;
+                height: auto;
+                border-radius: 5px;
+            }
     </style>
 </head>
 <body>
@@ -50,16 +208,55 @@
         <h1>RationalVLA: A Dual-system Vision-Language-Action Model for Defective Instructions</h1>
     </div>
 
-    <div class="authors">
+<!--     <div class="authors">
         <div>Wenxuan Song, Jiayi Chen, Han Zhao, Xu He, Wenxue Li, Pengxiang Ding, Shiyan </div>
         <div>Su, Feilong Tang, Xuelian Cheng, Zongyuan Ge, Donglin Wang, Haoang Li </div>
 <!--         <div>Bob Johnson<sup>1,2</sup></div>
         <div>Charlie Lee<sup>2</sup></div> -->
-        <div style="margin-top: 15px; font-size: 0.9em;">
+<!--         <div style="margin-top: 15px; font-size: 0.9em;">
             <sup>1</sup>The HongKong University of Science and Technology(Guangzhou)<br>
             <sup>2</sup>Shanghai Jiao Tong University
         </div>
+    </div> --> 
+    <div class="is-size-5 publication-authors">
+        <span class="author-block">
+          <p class="authors">
+            <a>Wenxuan Song</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Jiayi Chen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Han Zhao</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Xu He</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Wenxue Li</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Pengxiang Ding</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Shiyan Su</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Feilong Tang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Xuelian Cheng</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Zongyuan Ge</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Donglin Wang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>Haoang Li</a>
+            <!-- <br /><sup>*</sup>Indicates co-first author<br /> -->
+          </p>
+         </span>
     </div>
+
+    <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup><b>The HongKong University of Science and Technology(Guangzhou)</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span class="author-block"><sup>2</sup><b>Shanghai Jiao Tong University</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    
+    <div class="button-container">
+              <a href="" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-file-pdf"></i> Paper
+              </a>
+              <a href="" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-download"></i> Dataset
+              </a>
+              <a href="" class="btn btn-outline-secondary">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+              <a href="" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-laptop"></i> Demo
+              </a>
+     </div>
 
     <div class="video-container">
         <video controls>
